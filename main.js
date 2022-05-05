@@ -1,3 +1,7 @@
+RightWristX = 0;
+RightWristY = 0;
+RightWrist = 0;
+
 function setup(){
     canvas = createCanvas( 400, 400);
     canvas.center();
@@ -8,10 +12,21 @@ function setup(){
 }
 
 function modelLoaded(){
-    console.log("Model is initialise!!");
+    console.log("Model is initialised!!");
 }
-
+function gotPoses(results){
+   if(results.length > 0){
+      RightWristX = results[0].length.pose.RightWrist.x;
+      RightWristY = results[0].length.pose.RightWrist.y;
+   }
+}
 
 function draw(){
     image(video, 0, 0, 400, 400);
+    if(RightWrist > 0.2){
+        fill("#ffff00");
+        stroke("#ffff00");
+        circle();
+    }
 }
+
