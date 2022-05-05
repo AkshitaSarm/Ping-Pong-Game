@@ -1,6 +1,7 @@
 RightWristX = 0;
 RightWristY = 0;
 RightWrist = 0;
+GameStatus = " ";
 
 function setup(){
     canvas = createCanvas( 400, 400);
@@ -29,4 +30,10 @@ function draw(){
         circle();
     }
 }
+
+function StartGame(){
+    GameStatus = "Start";
+    document.getElementById("Status").innerHTML = "Game is loading";    
+}
+
 
